@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A372CE62BCB74F200A2F83F /* addCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A372CE52BCB74F200A2F83F /* addCardsVC.swift */; };
+		3A372CE82BCBC4BF00A2F83F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A372CE72BCBC4BF00A2F83F /* CardCell.swift */; };
 		3A904C7D2BCB07BB005B0C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A904C7C2BCB07BB005B0C17 /* AppDelegate.swift */; };
 		3A904C7F2BCB07BB005B0C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A904C7E2BCB07BB005B0C17 /* SceneDelegate.swift */; };
 		3A904C812BCB07BB005B0C17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A904C802BCB07BB005B0C17 /* ViewController.swift */; };
-		3A904C842BCB07BB005B0C17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A904C822BCB07BB005B0C17 /* Main.storyboard */; };
 		3A904C862BCB07C5005B0C17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A904C852BCB07C5005B0C17 /* Assets.xcassets */; };
-		3A904C892BCB07C5005B0C17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A904C872BCB07C5005B0C17 /* LaunchScreen.storyboard */; };
+		3A904C922BCB09BD005B0C17 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A904C912BCB09BD005B0C17 /* SplashViewController.swift */; };
+		3A904C942BCB0F1F005B0C17 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A904C932BCB0F1F005B0C17 /* OnboardingVC.swift */; };
+		3A904C9B2BCB1A47005B0C17 /* firago_5.0.7 in Resources */ = {isa = PBXBuildFile; fileRef = 3A904C9A2BCB1A46005B0C17 /* firago_5.0.7 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A372CE52BCB74F200A2F83F /* addCardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCardsVC.swift; sourceTree = "<group>"; };
+		3A372CE72BCBC4BF00A2F83F /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		3A904C792BCB07BB005B0C17 /* MemoMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A904C7C2BCB07BB005B0C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A904C7E2BCB07BB005B0C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A904C802BCB07BB005B0C17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3A904C832BCB07BB005B0C17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A904C852BCB07C5005B0C17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3A904C882BCB07C5005B0C17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A904C8A2BCB07C5005B0C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A904C912BCB09BD005B0C17 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		3A904C932BCB0F1F005B0C17 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		3A904C9A2BCB1A46005B0C17 /* firago_5.0.7 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = firago_5.0.7; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,32 @@
 			children = (
 				3A904C7C2BCB07BB005B0C17 /* AppDelegate.swift */,
 				3A904C7E2BCB07BB005B0C17 /* SceneDelegate.swift */,
-				3A904C802BCB07BB005B0C17 /* ViewController.swift */,
-				3A904C822BCB07BB005B0C17 /* Main.storyboard */,
+				3A904C902BCB0984005B0C17 /* New Group */,
 				3A904C852BCB07C5005B0C17 /* Assets.xcassets */,
-				3A904C872BCB07C5005B0C17 /* LaunchScreen.storyboard */,
 				3A904C8A2BCB07C5005B0C17 /* Info.plist */,
 			);
 			path = MemoMaster;
+			sourceTree = "<group>";
+		};
+		3A904C902BCB0984005B0C17 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				3A904C912BCB09BD005B0C17 /* SplashViewController.swift */,
+				3A904C932BCB0F1F005B0C17 /* OnboardingVC.swift */,
+				3A904C802BCB07BB005B0C17 /* ViewController.swift */,
+				3A372CE52BCB74F200A2F83F /* addCardsVC.swift */,
+				3A904C952BCB175B005B0C17 /* Fonts */,
+				3A372CE72BCBC4BF00A2F83F /* CardCell.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		3A904C952BCB175B005B0C17 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A904C9A2BCB1A46005B0C17 /* firago_5.0.7 */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +150,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A904C892BCB07C5005B0C17 /* LaunchScreen.storyboard in Resources */,
 				3A904C862BCB07C5005B0C17 /* Assets.xcassets in Resources */,
-				3A904C842BCB07BB005B0C17 /* Main.storyboard in Resources */,
+				3A904C9B2BCB1A47005B0C17 /* firago_5.0.7 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +162,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A372CE82BCBC4BF00A2F83F /* CardCell.swift in Sources */,
 				3A904C812BCB07BB005B0C17 /* ViewController.swift in Sources */,
 				3A904C7D2BCB07BB005B0C17 /* AppDelegate.swift in Sources */,
+				3A904C942BCB0F1F005B0C17 /* OnboardingVC.swift in Sources */,
 				3A904C7F2BCB07BB005B0C17 /* SceneDelegate.swift in Sources */,
+				3A372CE62BCB74F200A2F83F /* addCardsVC.swift in Sources */,
+				3A904C922BCB09BD005B0C17 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		3A904C822BCB07BB005B0C17 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A904C832BCB07BB005B0C17 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3A904C872BCB07C5005B0C17 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A904C882BCB07C5005B0C17 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3A904C8B2BCB07C5005B0C17 /* Debug */ = {
@@ -285,14 +294,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q2N9JMQ98Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MemoMaster/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -313,14 +322,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q2N9JMQ98Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MemoMaster/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
