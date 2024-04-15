@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     let cardCellIdentifier = "CardCell"
     
     // MARK: - Properties
-    
+
     let collectionView: UICollectionView = {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.scrollDirection = .vertical
@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         setupBackground()
         setupUI()
         viewControllerConstraints()
-        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,18 +55,21 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Button Action
-    
-    @objc func addButtonTapped() {
-        let addCardsViewController = AddCardsViewController()
-        addCardsViewController.delegate = self
-        navigationController?.pushViewController(addCardsViewController, animated: true)
-    }
-    
+
+    func addButtonTapped() {
+          let addCardsViewController = AddCardsViewController()
+          addCardsViewController.delegate = self
+          navigationController?.pushViewController(addCardsViewController, animated: true)
+      }
+
     // MARK: - UI Setup
-    
+
     func setupUI() {
         viewControllerConstraints()
         setupCollectionView()
+        addButton.addAction(UIAction(handler: { [weak self] _ in
+                   self?.addButtonTapped()
+               }), for: .touchUpInside)
     }
     
     func setupCollectionView() {

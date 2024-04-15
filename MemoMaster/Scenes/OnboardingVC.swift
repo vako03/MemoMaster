@@ -30,6 +30,7 @@ class OnboardingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 24
         button.layer.masksToBounds = true
+        
         return button
     }()
     
@@ -42,6 +43,9 @@ class OnboardingViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         view.insertSubview(backgroundImage, at: 0)
         onBoardConstraints()
+        startButton.addAction(UIAction { [weak self] _ in
+                  self?.moveToNextViewController()
+              }, for: .touchUpInside)
     }
     
     // MARK: - UI Setup
@@ -50,8 +54,7 @@ class OnboardingViewController: UIViewController {
         view.addSubview(splashLabel)
         view.addSubview(startButton)
         
-        
-        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+
         
         NSLayoutConstraint.activate([
             
@@ -68,9 +71,9 @@ class OnboardingViewController: UIViewController {
         ])
     }
     
-    @objc func startButtonTapped() {
-        
-        let mainViewController = ViewController()
-        navigationController?.pushViewController(mainViewController, animated: true)
-    }
+    // Method to move to the next view controller
+        func moveToNextViewController() {
+            let mainViewController = ViewController()
+            navigationController?.pushViewController(mainViewController, animated: true)
+        }
 }

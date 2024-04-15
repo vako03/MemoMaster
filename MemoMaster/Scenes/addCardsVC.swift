@@ -112,8 +112,10 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
         setupBackground()
         addAttributes()
         setupCollectionView()
-        addButton.addTarget(self, action: #selector(addCardButtonTapped), for: .touchUpInside)
-        viewControllerConstraints()
+        addButton.addAction(UIAction(handler: { [weak self] _ in
+                self?.addCardButtonTapped()
+            }), for: .touchUpInside)
+        viewControllerConstraints()        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -170,8 +172,7 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCollectionViewCell.reuseIdentifier, for: indexPath)
-        as! IconCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCollectionViewCell.reuseIdentifier, for: indexPath) as! IconCollectionViewCell
         cell.iconImageView.image = UIImage(named: iconImages[indexPath.item])
         return cell
     }
@@ -194,7 +195,7 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     // MARK: - Button Action
     
-    @objc func addCardButtonTapped() {
+    func addCardButtonTapped() {
         var selectedIconName: String = ""
         
         if let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first {
