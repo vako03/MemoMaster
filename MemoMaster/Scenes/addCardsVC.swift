@@ -11,6 +11,8 @@ import UIKit
 class AddCardsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     weak var delegate: AddCardsDelegate?
     
+    // MARK: - Properties
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "სათაური"
@@ -22,7 +24,9 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     let mainTextfield: UITextField = {
         let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "მაგ: პანიკა, დახმარება მჭირდება", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0)])
+        textField.attributedPlaceholder = NSAttributedString(string: "მაგ: პანიკა, დახმარება მჭირდება",
+                                                             attributes: [NSAttributedString.Key.foregroundColor:
+                                                                            UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0)])
         textField.font = UIFont.systemFont(ofSize: 12)
         textField.textColor = UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0)
         textField.backgroundColor = UIColor(red: 31/255, green: 34/255, blue: 45/255, alpha: 1.0)
@@ -30,8 +34,8 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
         textField.layer.borderColor = UIColor(red: 31/255, green: 34/255, blue: 45/255, alpha: 1.0).cgColor
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0).cgColor
-           textField.translatesAutoresizingMaskIntoConstraints = false
-           return textField
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
     
     let descriptionLabel: UILabel = {
@@ -45,16 +49,18 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     let detailTextfield: UITextField = {
         let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "მაგ: ფიგმამ გამიჭედა და ვინმემ გამომიგზავნეთ", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0)])
+        textField.attributedPlaceholder = NSAttributedString(string: "მაგ: ფიგმამ გამიჭედა და ვინმემ გამომიგზავნეთ",
+                                                             attributes: [NSAttributedString.Key.foregroundColor:
+                                                                            UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0)])
         textField.font = UIFont.systemFont(ofSize: 12)
         textField.textColor = UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0)
         textField.backgroundColor = UIColor(red: 31/255, green: 34/255, blue: 45/255, alpha: 1.0)
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor(red: 31/255, green: 34/255, blue: 45/255, alpha: 1.0).cgColor
         textField.borderStyle = .roundedRect
-        textField.layer.borderColor = UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0).cgColor 
-           textField.translatesAutoresizingMaskIntoConstraints = false
-           return textField
+        textField.layer.borderColor = UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0).cgColor
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
     
     let titleIconLabel: UILabel = {
@@ -98,6 +104,9 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     let iconImages = ["iconGreen", "iconPurple", "iconRed", "iconYello"]
     
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
@@ -124,7 +133,7 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
         mainVerticalStack.addArrangedSubview(descriptionLabel)
         mainVerticalStack.addArrangedSubview(detailTextfield)
         mainVerticalStack.addArrangedSubview(titleIconLabel)
-
+        
         
         NSLayoutConstraint.activate([
             mainVerticalStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 91),
@@ -135,23 +144,23 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func setupCollectionView() {
         collectionView.delegate = self
-           collectionView.dataSource = self
-           
-           let layout = UICollectionViewFlowLayout()
-           layout.scrollDirection = .horizontal
-           layout.minimumInteritemSpacing = 27 // Adjust the spacing here
-           
-           collectionView.setCollectionViewLayout(layout, animated: false)
-           
-           collectionView.register(IconCollectionViewCell.self, forCellWithReuseIdentifier: IconCollectionViewCell.reuseIdentifier)
-           view.addSubview(collectionView)
-           
-           NSLayoutConstraint.activate([
-               collectionView.topAnchor.constraint(equalTo: mainVerticalStack.bottomAnchor, constant: 15),
-               collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:  80),
-               collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -25),
-               collectionView.heightAnchor.constraint(equalToConstant: 50)
-               ])
+        collectionView.dataSource = self
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 27
+        
+        collectionView.setCollectionViewLayout(layout, animated: false)
+        
+        collectionView.register(IconCollectionViewCell.self, forCellWithReuseIdentifier: IconCollectionViewCell.reuseIdentifier)
+        view.addSubview(collectionView)
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: mainVerticalStack.bottomAnchor, constant: 15),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:  80),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -25),
+            collectionView.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     
     // MARK: - UICollectionViewDataSource
@@ -161,7 +170,8 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCollectionViewCell.reuseIdentifier, for: indexPath) as! IconCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCollectionViewCell.reuseIdentifier, for: indexPath)
+        as! IconCollectionViewCell
         cell.iconImageView.image = UIImage(named: iconImages[indexPath.item])
         return cell
     }
@@ -169,17 +179,14 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Handle icon selection here
-        _ = iconImages[indexPath.item] // Use _ to indicate that the variable is intentionally unused
-        // Reset all icons' highlighting
+        _ = iconImages[indexPath.item]
         for cell in collectionView.visibleCells {
             if let iconCell = cell as? IconCollectionViewCell {
                 iconCell.iconImageView.isHighlighted = false
             }
         }
-    
-
-        // Highlight the selected icon
+        
+        
         if let selectedCell = collectionView.cellForItem(at: indexPath) as? IconCollectionViewCell {
             selectedCell.iconImageView.isHighlighted = true
         }
@@ -190,15 +197,12 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     @objc func addCardButtonTapped() {
         var selectedIconName: String = ""
         
-        // Check which icon is selected
         if let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first {
             selectedIconName = iconImages[selectedIndexPath.item]
         }
         
-        // Pass the selected icon's name along with other details
         delegate?.didAddNewCard(imageName: selectedIconName, title: mainTextfield.text ?? "", description: detailTextfield.text ?? "")
         
-        // Dismiss the current view controller after adding the card
         navigationController?.popViewController(animated: true)
     }
     

@@ -9,6 +9,8 @@
 import UIKit
 
 class CardCell: UICollectionViewCell {
+    
+    // MARK: - Properties
     let iconImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,12 +44,14 @@ class CardCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI Setup
+
     func setupUI() {
         addSubview(iconImage)
         addSubview(labelTitle)
         addSubview(textDescription)
         layer.cornerRadius = 12
-
+        
         NSLayoutConstraint.activate([
             iconImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             iconImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 28),

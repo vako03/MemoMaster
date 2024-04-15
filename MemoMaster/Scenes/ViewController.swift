@@ -7,19 +7,6 @@
 
 import UIKit
 
-struct Card {
-    var imageName: String
-    var title: String
-    var description: String
-}
-
-var cards: [Card] = [
-    Card(imageName: "iconRed", title: "Beka ras gverchi?", description: "ახლა გავხსენი დავალება ეს რააარიიიr"),
-    Card(imageName: "iconPurple", title: "რამე სიმღერა მირჩიეთ", description: "დავალების კეთებისას ღამე ძაან მეძინება,ყავამ არ მიშველა"),
-    Card(imageName: "iconGreen", title: "ფიგმამ თქვენც დაგტანჯათ?", description: "Green Description for User"),
-    Card(imageName: "iconYello", title: "მეტი ბედინა გვინდა", description: "შევწუხდი დაბალი ხარისხით იწერს ყველას"),
-    Card(imageName: "iconPurple", title: "Purple Icon Title", description: "შევწუხდით ნუ, აღარ გვინდა ამდენი ტეილორ Swift-ი"),
-]
 
 protocol AddCardsDelegate: AnyObject {
     func didAddNewCard(imageName: String, title: String, description: String)
@@ -28,10 +15,12 @@ protocol AddCardsDelegate: AnyObject {
 class ViewController: UIViewController {
     let cardCellIdentifier = "CardCell"
     
+    // MARK: - Properties
+    
     let collectionView: UICollectionView = {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 160, height: 192), collectionViewLayout: collectionViewFlowLayout)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 160, height: 180), collectionViewLayout: collectionViewFlowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
@@ -47,6 +36,7 @@ class ViewController: UIViewController {
         return button
     }()
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
@@ -65,11 +55,15 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
+    // MARK: - Button Action
+    
     @objc func addButtonTapped() {
         let addCardsViewController = AddCardsViewController()
         addCardsViewController.delegate = self
         navigationController?.pushViewController(addCardsViewController, animated: true)
     }
+    
+    // MARK: - UI Setup
     
     func setupUI() {
         viewControllerConstraints()
@@ -115,6 +109,8 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource
+
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
@@ -128,14 +124,18 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = collectionView.bounds.width
         let spacing: CGFloat = 6
         let itemWidth = (collectionViewWidth - (2 * spacing)) / 2
-        return CGSize(width: itemWidth, height: itemWidth * 1.2)
+        return CGSize(width: itemWidth, height: itemWidth * 1.1)
     }
 }
+
+// MARK: - AddCardsDelegate
 
 extension ViewController: AddCardsDelegate {
     func didAddNewCard(imageName: String, title: String, description: String) {
