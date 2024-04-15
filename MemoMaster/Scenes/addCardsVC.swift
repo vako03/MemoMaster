@@ -83,7 +83,7 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     let addButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Add", for: .normal)
+        button.setTitle("დამატება", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 0, green: 155/255, blue: 16/255, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -113,9 +113,9 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
         addAttributes()
         setupCollectionView()
         addButton.addAction(UIAction(handler: { [weak self] _ in
-                self?.addCardButtonTapped()
-            }), for: .touchUpInside)
-        viewControllerConstraints()        
+            self?.addCardButtonTapped()
+        }), for: .touchUpInside)
+        viewControllerConstraints()
     }
     
     
@@ -172,14 +172,18 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
     // MARK: - Button Action
     
     func addCardButtonTapped() {
-        var selectedIconName: String = ""
-        
-        if let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first {
-            selectedIconName = iconImages[selectedIndexPath.item]
+        guard let title = mainTextfield.text, !title.isEmpty,
+              let description = detailTextfield.text, !description.isEmpty,
+              let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else {
+            
+            let alert = UIAlertController(title: "წუწუნა", message: "წუწუნს აკლია ან სათაური ან აღწერა ან ფოტო.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
         }
         
-        delegate?.didAddNewCard(imageName: selectedIconName, title: mainTextfield.text ?? "", description: detailTextfield.text ?? "")
-        
+        let selectedIconName = iconImages[selectedIndexPath.item]
+        delegate?.didAddNewCard(imageName: selectedIconName, title: title, description: description)
         navigationController?.popViewController(animated: true)
     }
     

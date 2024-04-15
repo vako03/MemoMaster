@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     let addButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Add new cards", for: .normal)
+        button.setTitle("ახალი წუწუნ ბარათის დამატება", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 0, green: 117/255, blue: 1, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false

@@ -20,7 +20,7 @@ class OnboardingViewController: UIViewController {
                label.font = customFont
             
            } else {
-               label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+               label.font = UIFont.systemFont(ofSize: 30, weight: .regular)
            }
            
            label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,9 +29,18 @@ class OnboardingViewController: UIViewController {
     }()
     
     
+    let labelForConstraint: UILabel = {
+        let label = UILabel()
+        label.text = " "
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     let startButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Start", for: .normal)
+        button.setTitle("დაწყება", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 0, green: 117/255, blue: 1, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -59,13 +68,19 @@ class OnboardingViewController: UIViewController {
     
     func onBoardConstraints() {
         view.addSubview(splashLabel)
+        view.addSubview(labelForConstraint)
         view.addSubview(startButton)
+
         
 
         
         NSLayoutConstraint.activate([
             
-            splashLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 300),
+            labelForConstraint.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150),
+            labelForConstraint.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 21),
+            labelForConstraint.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -91),
+            
+            splashLabel.topAnchor.constraint(equalTo: labelForConstraint.bottomAnchor, constant: 120),
             splashLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 21),
             splashLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -91),
             
