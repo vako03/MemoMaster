@@ -16,9 +16,16 @@ class OnboardingViewController: UIViewController {
         label.text = "შედი\nაპლიკაციაში\nდა იწუწუნე\nრამდენიც გინდა"
         label.textColor = .white
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+        if let customFont = UIFont(name: "FiraGO-Regular", size: 30) {
+               label.font = customFont
+            
+           } else {
+               label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+           }
+           
+           label.translatesAutoresizingMaskIntoConstraints = false
+
+           return label
     }()
     
     
