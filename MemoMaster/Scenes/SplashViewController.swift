@@ -12,7 +12,7 @@ class SplashViewController: UIViewController {
     
     let labelSplashView: UILabel = {
         let label = UILabel()
-        label.text = "Map Moments"   //  ფონტი მაქვს შესაცვლელი
+        label.text = "Map Moments"  
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -58,7 +58,6 @@ class OnboardingViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            
             splashLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 300),
             splashLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 21),
             splashLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -91),
@@ -71,7 +70,6 @@ class OnboardingViewController: UIViewController {
         ])
     }
     
-    // Method to move to the next view controller
         func moveToNextViewController() {
             let mainViewController = ViewController()
             navigationController?.pushViewController(mainViewController, animated: true)

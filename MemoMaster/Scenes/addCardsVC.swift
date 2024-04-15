@@ -118,15 +118,6 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
         viewControllerConstraints()        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
     
     func addAttributes(){
         view.addSubview(mainVerticalStack)
@@ -177,21 +168,6 @@ class AddCardsViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cell
     }
     
-    // MARK: - UICollectionViewDelegate
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        _ = iconImages[indexPath.item]
-        for cell in collectionView.visibleCells {
-            if let iconCell = cell as? IconCollectionViewCell {
-                iconCell.iconImageView.isHighlighted = false
-            }
-        }
-        
-        
-        if let selectedCell = collectionView.cellForItem(at: indexPath) as? IconCollectionViewCell {
-            selectedCell.iconImageView.isHighlighted = true
-        }
-    }
     
     // MARK: - Button Action
     
