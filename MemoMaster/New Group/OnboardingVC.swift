@@ -12,7 +12,7 @@ class OnboardingViewController: UIViewController {
     
     let splashLabel: UILabel = {
         let label = UILabel()
-        label.text = "შედი აპლიკაციაში და იწუწუნე რამდენიც გინდა"  //fonti
+        label.text = "შედი აპლიკაციაში და იწუწუნე რამდენიც გინდა" 
         label.textColor = .white
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)

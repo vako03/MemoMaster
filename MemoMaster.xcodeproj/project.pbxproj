@@ -15,7 +15,8 @@
 		3A904C862BCB07C5005B0C17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A904C852BCB07C5005B0C17 /* Assets.xcassets */; };
 		3A904C922BCB09BD005B0C17 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A904C912BCB09BD005B0C17 /* SplashViewController.swift */; };
 		3A904C942BCB0F1F005B0C17 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A904C932BCB0F1F005B0C17 /* OnboardingVC.swift */; };
-		3A904C9B2BCB1A47005B0C17 /* firago_5.0.7 in Resources */ = {isa = PBXBuildFile; fileRef = 3A904C9A2BCB1A46005B0C17 /* firago_5.0.7 */; };
+		3ACE75CF2BCCAC5F006D656F /* FiraGO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE75CE2BCCAC5F006D656F /* FiraGO-Regular.ttf */; };
+		3ACE75D32BCCC737006D656F /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE75D22BCCC737006D656F /* IconCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		3A904C8A2BCB07C5005B0C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A904C912BCB09BD005B0C17 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		3A904C932BCB0F1F005B0C17 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
-		3A904C9A2BCB1A46005B0C17 /* firago_5.0.7 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = firago_5.0.7; sourceTree = "<group>"; };
+		3ACE75CE2BCCAC5F006D656F /* FiraGO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Regular.ttf"; sourceTree = "<group>"; };
+		3ACE75D22BCCC737006D656F /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A465C632BCC3954005F1D31 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3A904C7C2BCB07BB005B0C17 /* AppDelegate.swift */,
+				3A904C7E2BCB07BB005B0C17 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		3A904C702BCB07BB005B0C17 = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +73,7 @@
 		3A904C7B2BCB07BB005B0C17 /* MemoMaster */ = {
 			isa = PBXGroup;
 			children = (
-				3A904C7C2BCB07BB005B0C17 /* AppDelegate.swift */,
-				3A904C7E2BCB07BB005B0C17 /* SceneDelegate.swift */,
+				3A465C632BCC3954005F1D31 /* App */,
 				3A904C902BCB0984005B0C17 /* New Group */,
 				3A904C852BCB07C5005B0C17 /* Assets.xcassets */,
 				3A904C8A2BCB07C5005B0C17 /* Info.plist */,
@@ -78,8 +88,9 @@
 				3A904C932BCB0F1F005B0C17 /* OnboardingVC.swift */,
 				3A904C802BCB07BB005B0C17 /* ViewController.swift */,
 				3A372CE52BCB74F200A2F83F /* addCardsVC.swift */,
-				3A904C952BCB175B005B0C17 /* Fonts */,
 				3A372CE72BCBC4BF00A2F83F /* CardCell.swift */,
+				3ACE75D22BCCC737006D656F /* IconCell.swift */,
+				3A904C952BCB175B005B0C17 /* Fonts */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -87,7 +98,7 @@
 		3A904C952BCB175B005B0C17 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				3A904C9A2BCB1A46005B0C17 /* firago_5.0.7 */,
+				3ACE75CE2BCCAC5F006D656F /* FiraGO-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -151,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A904C862BCB07C5005B0C17 /* Assets.xcassets in Resources */,
-				3A904C9B2BCB1A47005B0C17 /* firago_5.0.7 in Resources */,
+				3ACE75CF2BCCAC5F006D656F /* FiraGO-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +175,7 @@
 			files = (
 				3A372CE82BCBC4BF00A2F83F /* CardCell.swift in Sources */,
 				3A904C812BCB07BB005B0C17 /* ViewController.swift in Sources */,
+				3ACE75D32BCCC737006D656F /* IconCell.swift in Sources */,
 				3A904C7D2BCB07BB005B0C17 /* AppDelegate.swift in Sources */,
 				3A904C942BCB0F1F005B0C17 /* OnboardingVC.swift in Sources */,
 				3A904C7F2BCB07BB005B0C17 /* SceneDelegate.swift in Sources */,
